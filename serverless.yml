@@ -1,0 +1,16 @@
+service: aws-harshit-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: ap-south-1
+
+functions:
+  myfunc:
+    handler: file.myfunc
+    events:
+      -http:
+         path: /data
+         method: GET
